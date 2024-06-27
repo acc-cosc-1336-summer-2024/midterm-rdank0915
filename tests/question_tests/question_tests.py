@@ -3,10 +3,11 @@ import unittest
 
 #follow this example to add questions b, c, and d for testing including their functions
 from src.question_a.question_a import get_bonus_pay_amount, test_config
+from src.question_b.question_b import get_miles_per_hour
 
 class Test_Config(unittest.TestCase):
 
-    def test_question_a_config(self):
+    def test_question_b_config(self):
         self.assertEqual(True, test_config())
 
 
@@ -28,3 +29,8 @@ class Test_Config(unittest.TestCase):
     def test_get_bonus_pay_amount6(self):
         #test that the function get_bonus_pay_amount with value 2000 returns "Invalid Arguments"
         self.assertEqual(get_bonus_pay_amount(2000), "Invalid Arguments")
+
+
+    def test_get_miles_per_hour1(self):
+        #test that the function get_miles_per_hour with values 32 and 60 returns 19.883872
+        self.assertEqual(get_miles_per_hour(32, 60), 19.883872)
