@@ -2,12 +2,15 @@
 import unittest
 
 #follow this example to add questions b, c, and d for testing including their functions
+
 from src.question_a.question_a import get_bonus_pay_amount, test_config
 from src.question_b.question_b import get_miles_per_hour
+from src.question_c.question_c import use_local_variable
+
 
 class Test_Config(unittest.TestCase):
 
-    def test_question_b_config(self):
+    def test_question_c_config(self):
         self.assertEqual(True, test_config())
 
 
@@ -34,3 +37,12 @@ class Test_Config(unittest.TestCase):
     def test_get_miles_per_hour1(self):
         #test that the function get_miles_per_hour with values 32 and 60 returns 19.883872
         self.assertEqual(get_miles_per_hour(32, 60), 19.883872)
+
+    
+    def test_use_local_variable1(self):
+        #test that the function use_local_variable does not affect the variable outside the function
+        num = 100
+        use_local_variable(num)
+        self.assertEqual(num, 100)
+    
+    
