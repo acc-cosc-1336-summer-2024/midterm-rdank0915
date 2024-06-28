@@ -6,11 +6,12 @@ import unittest
 from src.question_a.question_a import get_bonus_pay_amount, test_config
 from src.question_b.question_b import get_miles_per_hour
 from src.question_c.question_c import use_local_variable
+from src.question_d.question_d import use_global
 
 
 class Test_Config(unittest.TestCase):
 
-    def test_question_c_config(self):
+    def test_question_d_config(self):
         self.assertEqual(True, test_config())
 
 
@@ -44,5 +45,11 @@ class Test_Config(unittest.TestCase):
         num = 100
         use_local_variable(num)
         self.assertEqual(num, 100)
+
+    def test_use_global1(self):
+        #test that the function use_global can be modified inside a function
+        global my_var
+        use_global()
+        self.assertEqual(use_global(), 5)
     
     
