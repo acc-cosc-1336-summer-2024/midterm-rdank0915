@@ -7,4 +7,4 @@ def use_global():
     my_var = 5
     return(my_var)
 
-use_global()
+
